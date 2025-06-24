@@ -277,10 +277,10 @@ class StrandsAgent(Agent):
 
         except ConnectionError as error:
             Logger.error(f"Connection error in streaming response: {str(error)}")
-            raise ConnectionError(f"Streaming connection failed: {str(error)}")
+            raise
         except ValueError as error:
             Logger.error(f"Value error in streaming response: {str(error)}")
-            raise ValueError(f"Streaming configuration error: {str(error)}")
+            raise
         except Exception as error:
             Logger.error(f"Error in streaming response: {str(error)}")
             raise
@@ -338,10 +338,10 @@ class StrandsAgent(Agent):
 
         except ValueError as error:
             Logger.error(f"Value error in single response: {str(error)}")
-            raise ValueError(f"Invalid input parameters: {str(error)}")
+            raise
         except RuntimeError as error:
             Logger.error(f"Runtime error in single response: {str(error)}")
-            raise RuntimeError(f"Strands agent execution error: {str(error)}")
+            raise
         except Exception as error:
             Logger.error(f"Error in single response: {str(error)}")
             raise
@@ -456,10 +456,10 @@ class StrandsAgent(Agent):
 
         except ValueError as error:
             Logger.error(f"Value error processing request with StrandsAgent: {str(error)}")
-            raise ValueError(f"Invalid input parameters: {str(error)}")
+            raise
         except RuntimeError as error:
             Logger.error(f"Runtime error processing request with StrandsAgent: {str(error)}")
-            raise RuntimeError(f"Strands agent execution error: {str(error)}")
+            raise
         except Exception as error:
             Logger.error(f"Error processing request with StrandsAgent: {str(error)}")
             raise
